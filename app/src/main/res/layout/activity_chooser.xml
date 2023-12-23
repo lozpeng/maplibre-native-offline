@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activities.ChooserActivity">
+
+    <Button
+        android:id="@+id/vectorMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Offline Vector Map" />
+
+    <Button
+        android:id="@+id/rasterMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Offline Raster Map" />
+
+    <Button
+        android:id="@+id/localServerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Offline tile server" />
+
+    <Button
+        android:id="@+id/onLineMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Online with Cache" />
+
+    <TextView
+        android:id="@+id/txtViewSha"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="#777272"
+        android:textColor="#FFFFFF"
+        android:gravity="center"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

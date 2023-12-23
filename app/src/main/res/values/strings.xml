@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">离线地图</string>
+    <string name="title_activity_on_line_map">OnLineMapActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="request_permissions">程序需要授权使用：\n 1:本地数据读写权限；\n 2:高精度位置信息</string>>
+</resources>

@@ -1,0 +1,98 @@
+//地形图：http://t4.tianditu.gov.cn/DataServer?T=ter_w&x={x}&y={y}&l={z}&tk=key
+//街道图：http://t4.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=key
+//影像图：http://t4.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=key
+//影像标注：http://t4.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=key
+//地形标注：http://t4.tianditu.gov.cn/DataServer?T=cta_w&x={x}&y={y}&l={z}&tk=key
+//矢量标注：http://t4.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=key
+
+{
+  "version": 8,
+  "name": "Tianditu",
+  "zoom": 11.6,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "tdt-satellite-xyz": {
+      "type": "raster",
+      "tileSize": 256,
+      "tiles": [
+        "http://t0.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t1.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t2.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t3.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t4.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491"
+      ]
+    },
+    "tdt-satellite-anno": {
+      "type": "raster",
+      "tileSize": 256,
+      "tiles": [
+        "http://t0.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t1.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t2.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t3.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t4.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491"
+      ]
+    },
+    "tdt-satellite-source": {
+      "type": "raster",
+      "tileSize": 256,
+      "tiles": [
+        "https://t0.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "https://t1.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "https://t2.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "https://t3.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491"
+      ]
+    },
+    "tdt-vecc-source": {
+      "type": "raster",
+      "tileSize": 256,
+      "tiles": [
+        "https://t0.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "https://t1.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "https://t2.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "https://t3.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491"
+      ]
+    },
+   "tdt-vec-anno": {
+      "type": "raster",
+     "tileSize": 256,
+     "tiles": [
+       "https://t0.tianditu.gov.cn/cva_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cva&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+       "https://t1.tianditu.gov.cn/cva_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cva&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+       "https://t2.tianditu.gov.cn/cva_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cva&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491",
+       "https://t3.tianditu.gov.cn/cva_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cva&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=982c56cebad276917fcc4b744bed5491"
+     ]
+
+  }
+  },
+  "layers": [
+    {
+      "id": "tdt-vecc-layer",
+      "type": "raster",
+      "source": "tdt-satellite-xyz",
+      "paint": {
+        "raster-brightness-max": 0.7,
+        "raster-brightness-min": 0.3,
+        "raster-hue-rotate": 20,
+        "raster-saturation": 0.7
+      },
+      "minzoom": 0,
+      "maxzoom": 17
+    },
+    {
+      "id": "tdt-vecc-anno-layer",
+      "type": "raster",
+      "source": "tdt-satellite-anno",
+      "paint": {
+        "raster-opacity": 1.0
+      },
+      "minzoom": 0,
+      "maxzoom": 17
+    }
+  ]
+}
+
+
+http://zh01.stgz.org.cn/jsyx/wmts?tk=dlwy_app&layer=satImage&style=default&tilematrixset=satImage&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix={z}}&TileCol={x}}&TileRow={y}}
+http://ly.stgz.org.cn/mapzoneGISyzt/2021_ld_dl_union/{z}}/{x}}/{y}}/tile.png?t=1694080765097

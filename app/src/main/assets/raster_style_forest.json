@@ -1,0 +1,47 @@
+{
+  "version": 8,
+  "name": "Forest",
+  "zoom": 11.6,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "stgz-forest-source": {
+      "type": "rater",
+      "tileSize": 256,
+      "tiles": [
+        "http://zh01.stgz.org.cn/jsyx/wmts?tk=dlwy_app&layer=satImage&style=default&tilematrixset=satImage&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image/jpeg&TileMatrix={z}&TileCol={y}&TileRow={x}"
+      ]
+    },
+    "tdt-satellite-anno": {
+      "type": "raster",
+      "tileSize": 256,
+      "tiles": [
+        "http://t0.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t1.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t2.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t3.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491",
+        "http://t4.tianditu.gov.cn/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=982c56cebad276917fcc4b744bed5491"
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "forest-vecc-layer",
+      "type": "raster",
+      "source": "stgz-forest-source",
+      "minzoom": 0,
+      "maxzoom": 17
+    },
+    {
+      "id": "tdt-satellite-anno",
+      "type": "raster",
+      "source": "tdt-satellite-anno",
+      "paint": {
+        "raster-opacity": 1.0
+      },
+      "minzoom": 0,
+      "maxzoom": 17
+    }
+  ]
+}
+
