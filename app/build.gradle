@@ -67,7 +67,7 @@ android {
 }
 
 dependencies {
-    implementation (files("libs/MapboxGLAndroidSDK-drawable-release.aar"))
+    implementation (files("libs/MapLibreAndroid-drawable-release.aar"))
     implementation dependenciesList.mapboxAndroidGestures
     implementation dependenciesList.utilCode
     //implementation project(':MapboxGLAndroidSDK')

@@ -19,8 +19,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.mapbox.geojson.FeatureCollection
-import com.mapbox.geojson.Point
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.HttpUrl.Companion.toHttpUrl
@@ -47,6 +45,8 @@ import org.maplibre.android.maps.MapLibreMap
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.maps.OnMapReadyCallback
 import org.maplibre.android.maps.Style
+import org.maplibre.geojson.FeatureCollection
+import org.maplibre.geojson.Point
 import java.text.SimpleDateFormat
 import java.util.Locale
 

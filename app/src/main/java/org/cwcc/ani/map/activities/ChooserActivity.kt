@@ -41,7 +41,7 @@ class ChooserActivity : AppCompatActivity() {
             shaCode+=str
             shaCode+="\n"
         }
-        val version =  shaCode + "\n 版本号："+  org.maplibre.android.BuildConfig.MAPBOX_SDK_VERSION
+        val version =  shaCode + "\n 版本号："+  org.maplibre.android.BuildConfig.MAPLIBRE_VERSION_STRING
         textView.text = version
     }
 }

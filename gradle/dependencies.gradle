@@ -13,7 +13,7 @@ ext {
     ]
 
     versions = [
-            mapLibreServices: '5.9.0',
+            mapLibreServices: '6.0.0',
             mapboxCore      : '2.0.1',
             mapboxGestures  : '0.7.0',
             appCompat       : '1.5.1',

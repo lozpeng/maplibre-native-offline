@@ -7,18 +7,14 @@ import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.Switch
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import com.mapbox.android.gestures.StandardScaleGestureDetector
-import com.mapbox.geojson.Point
-import com.mapbox.geojson.Polygon
 import org.cwcc.ani.map.R
 import org.maplibre.android.MapLibre
 import org.maplibre.android.camera.CameraUpdateFactory
@@ -32,6 +28,8 @@ import org.maplibre.android.style.layers.PropertyFactory
 import org.maplibre.android.style.layers.PropertyFactory.fillColor
 import org.maplibre.android.style.layers.PropertyFactory.fillOpacity
 import org.maplibre.android.style.sources.GeoJsonSource
+import org.maplibre.geojson.Point
+import org.maplibre.geojson.Polygon
 import timber.log.Timber
 import java.io.*
 
@@ -351,11 +349,11 @@ fun showBoundsArea(
 
     loadedMapStyle.removeLayer(layerId)
     loadedMapStyle.removeSource(sourceId)
-
+    val geo =  Polygon.fromLngLats(mutableListOf(outerPoints.toMutableList()))
     loadedMapStyle.addSource(
         GeoJsonSource(
-            sourceId,
-            Polygon.fromLngLats(mutableListOf(outerPoints.toMutableList()))
+            sourceId,geo
+
         )
     )
     loadedMapStyle.addLayer(
