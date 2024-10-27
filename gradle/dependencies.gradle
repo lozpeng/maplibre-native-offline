@@ -2,8 +2,8 @@ ext {
 
     androidVersions = [
             minSdkVersion    : 23,
-            targetSdkVersion : 33,
-            compileSdkVersion: 33,
+            targetSdkVersion : 34,
+            compileSdkVersion: 34,
     ]
 
     androidSdkVersions = [
@@ -46,11 +46,19 @@ ext {
             utilcode        : '1.31.1',
             multidex        : "2.0.1"
     ]
-    
+    def libreversion = [:]
+    libreversion.mapLibreServices = '6.0.0'
+    libreversion.mapboxCore  = '2.0.1'
+    libreversion.mapboxGestures = '0.7.0'
+    libreversion.timber = '5.0.1'
+    libreversion.geojson ='6.0.1'
+    libreversion.annotation = '3.0.0'
+
     dependenciesList = [
-            mapboxJavaGeoJSON      : "org.maplibre.gl:android-sdk-geojson:${versions.mapLibreServices}",
-            mapboxAndroidGestures  : "com.mapbox.mapboxsdk:mapbox-android-gestures:${versions.mapboxGestures}",
-            mapboxJavaTurf         : "org.maplibre.gl:android-sdk-turf:${versions.mapLibreServices}",
+            mapboxJavaGeoJSON      : "org.maplibre.gl:android-sdk-geojson:$libreversion.geojson",
+            mapboxAndroidGestures  : "org.maplibre.gl:maplibre-android-gestures:0.0.1",
+            mapboxJavaTurf         : "org.maplibre.gl:android-sdk-turf:$libreversion.mapLibreServices",
+            maplibreAnnotation     :"org.maplibre.gl:android-plugin-annotation-v9:$libreversion.annotation",
             utilCode               : "com.blankj:utilcodex:${versions.utilcode}",
             junit                  : "junit:junit:${versions.junit}",
             amdroidxJunit          : "androidx.test.ext:junit:1.1.4",

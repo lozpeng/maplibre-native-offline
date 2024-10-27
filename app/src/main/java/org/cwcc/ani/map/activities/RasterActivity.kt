@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
-import com.mapbox.android.gestures.StandardScaleGestureDetector
 import org.cwcc.ani.map.R
 import org.maplibre.android.maps.MapLibreMap
 import org.maplibre.android.camera.CameraUpdateFactory
 import org.maplibre.android.geometry.LatLngBounds
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.MapLibre
+import org.maplibre.android.gestures.StandardScaleGestureDetector
 import org.maplibre.android.maps.Style
 import timber.log.Timber
 import java.io.BufferedWriter
