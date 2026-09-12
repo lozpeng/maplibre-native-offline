@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('MapLibreAndroid-multiBackend-release-android-v13.6.1.aar'))
