@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-//import com.blankj.utilcode.util.AppUtils
+import com.blankj.utilcode.util.AppUtils
 import org.cwcc.ani.map.R
 import timber.log.Timber
 
@@ -31,16 +31,16 @@ class ChooserActivity : AppCompatActivity() {
             startActivity(Intent(this, OnLineMapActivity::class.java))
 
         }
-        var textView:TextView = findViewById<TextView>(R.id.txtViewSha)
+        val textView:TextView = findViewById<TextView>(R.id.txtViewSha)
         var shaCode:String ="SHA代码：\n"
 
-//        for (i in 0 until AppUtils.getAppSignaturesSHA1().size) {
-//            Timber.tag("SHA1").v(AppUtils.getAppSignaturesSHA1().get(i))
-//            var str:String  = AppUtils.getAppSignaturesSHA1().get(i)
-//            Log.v("SHA1",str)
-//            shaCode+=str
-//            shaCode+="\n"
-//        }
+        for (i in 0 until AppUtils.getAppSignaturesSHA1().size) {
+            Timber.tag("SHA1").v(AppUtils.getAppSignaturesSHA1().get(i))
+            val str:String  = AppUtils.getAppSignaturesSHA1().get(i)
+            Timber.tag("SHA1").v(str)
+            shaCode+=str
+            shaCode+="\n"
+        }
         val version =  shaCode + "\n 版本号："+  org.maplibre.android.BuildConfig.MAPLIBRE_VERSION_STRING
         textView.text = version
     }

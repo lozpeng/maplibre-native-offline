@@ -57,7 +57,7 @@ import java.net.URI
 import java.net.URISyntaxException
 import java.text.SimpleDateFormat
 import java.util.Locale
-
+import org.maplibre.android.style.layers.SymbolLayer
 //!
 class OnLineMapActivity : AppCompatActivity(),OnMapReadyCallback {
     private val mapView: MapView by lazy { findViewById(R.id.onLineMapView) }
@@ -85,18 +85,12 @@ class OnLineMapActivity : AppCompatActivity(),OnMapReadyCallback {
                     .build()
             )
 
-           val loc =  locationComponent!!.lastKnownLocation
-            //mapView.
-            if(isTianditu)
-            {
-                maplibreMap.setStyle(Style.Builder().fromUri("asset://raster_style_forest.json"))
-                isTianditu = false
+            val newStyleUri = "asset://raster_style_tdt.json" // 按你的逻辑选择
+            maplibreMap.setStyle(Style.Builder().fromUri(newStyleUri)) { style ->
+                setMapLanguage(style, Locale.getDefault().language)
             }
-            else
-            {
-                maplibreMap.setStyle(Style.Builder().fromUri("asset://raster_style_tdt.json"))
-                isTianditu = true
-            }
+
+            isTianditu = !isTianditu
             getEarthQuakeDataFromUSGS()
 
 
@@ -120,7 +114,9 @@ class OnLineMapActivity : AppCompatActivity(),OnMapReadyCallback {
     @SuppressLint("MissingPermission")
     override fun onMapReady(map: MapLibreMap) {
         this.maplibreMap = map
-        maplibreMap.setStyle(Style.Builder().fromUri("asset://raster_style_forest.json")){style: Style ->
+        maplibreMap.setStyle(Style.Builder().fromUri("asset://raster_style_tdt.json")){style: Style ->
+            // 设置地图语言（新增）
+            setMapLanguage(style, Locale.getDefault().language)
             locationComponent = maplibreMap.locationComponent
             val locationComponentOptions =
                 LocationComponentOptions.builder(this@OnLineMapActivity)
@@ -137,6 +133,19 @@ class OnLineMapActivity : AppCompatActivity(),OnMapReadyCallback {
         maplibreMap.uiSettings.isLogoEnabled = false
         val uiSettings = this@OnLineMapActivity.maplibreMap.uiSettings
         uiSettings.setAllGesturesEnabled(true)
+    }
+
+    private fun setMapLanguage(style: Style, languageCode: String) {
+        val targetField = "name:$languageCode"
+        style.layers.forEach { layer ->
+            if (layer is org.maplibre.android.style.layers.SymbolLayer) {
+                val newTextField = Expression.coalesce(
+                    Expression.get(targetField),
+                    Expression.get("name")
+                )
+                layer.setProperties(PropertyFactory.textField(newTextField))
+            }
+        }
     }
 
 

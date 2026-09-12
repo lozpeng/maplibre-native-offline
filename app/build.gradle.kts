@@ -15,6 +15,9 @@ android {
         versionCode = 14
         versionName = "6.0.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64")
+        }
     }
 
     compileOptions {
@@ -105,6 +108,8 @@ dependencies {
     debugImplementation(libs.leak.canary)
 
     implementation(libs.android.server.core)
+
+    implementation(libs.blankj.utilCode )
 
     testImplementation(libs.junit)
     testImplementation(libs.mockito)
