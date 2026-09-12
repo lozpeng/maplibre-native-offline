@@ -14,6 +14,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.res.ResourcesCompat
@@ -58,6 +59,9 @@ import java.net.URISyntaxException
 import java.text.SimpleDateFormat
 import java.util.Locale
 import org.maplibre.android.style.layers.SymbolLayer
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 //!
 class OnLineMapActivity : AppCompatActivity(),OnMapReadyCallback {
     private val mapView: MapView by lazy { findViewById(R.id.onLineMapView) }
@@ -149,15 +153,24 @@ class OnLineMapActivity : AppCompatActivity(),OnMapReadyCallback {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun getEarthQuakeDataFromUSGS() {
+        val formatter = DateTimeFormatter.ISO_LOCAL_DATE
+
+        val endDate = LocalDate.now()
+        val startDate = endDate.minusYears(1)
+
+        val startStr = startDate.format(formatter)   // 例如 "2025-09-12"
+        val endStr = endDate.format(formatter)       // 例如 "2026-09-12"
+
         val url = "https://earthquake.usgs.gov/fdsnws/event/1/query".toHttpUrl().newBuilder()
             .addQueryParameter("format", "geojson")
-            .addQueryParameter("starttime", "2022-01-01")
-            .addQueryParameter("endtime", "2023-12-31")
+            .addQueryParameter("starttime", startStr)
+            .addQueryParameter("endtime", endStr)
             .addQueryParameter("minmagnitude", "5.8")
-            .addQueryParameter("latitude", "24")
-            .addQueryParameter("longitude", "121")
-            .addQueryParameter("maxradius", "1.5")
+//            .addQueryParameter("latitude", "24")
+//            .addQueryParameter("longitude", "121")
+//            .addQueryParameter("maxradius", "1.5")
             .build()
         val request: Request = Request.Builder().url(url).build()
 
